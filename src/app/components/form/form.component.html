@@ -1,0 +1,107 @@
+<div class="container mt-3">
+    <!-- CARD START -->
+    <div class="card">
+        <div class="card-header d-flex justify-content-center">
+            Formulario de Contacto
+        </div>
+        <div class="card-body">
+            <!-- FORM START -->
+            <form [formGroup]="dataForm">
+                <!-- NOMBRE FIELD -->
+                <div class="form-group row mb-3">
+                    <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+                    <div class="col-sm-10">
+                        <input 
+                            name="nombre" 
+                            type="text" 
+                            class="form-control" 
+                            id="nombre" 
+                            formControlName="nombre"
+                            [ngClass]="{'is-invalid': nombreControlIsInvalid}"
+                        >
+                        <app-input-validator 
+                            class="invalid-feedback"
+                            [controlForm]="nombre"
+                        ></app-input-validator>
+                    </div>
+                </div>
+
+                <!-- APELLIDO FIELD -->
+                <div class="form-group row mb-3">
+                    <label for="apellido" class="col-sm-2 col-form-label">Apellido</label>
+                    <div class="col-sm-10">
+                        <input 
+                            name="apellido" 
+                            type="text" 
+                            class="form-control" 
+                            id="apellido"
+                            formControlName="apellido"
+                            [ngClass]="{'is-invalid': apellidoControlIsInvalid}"
+                        >
+                        <app-input-validator 
+                            class="invalid-feedback"
+                            [controlForm]="apellido"
+                        ></app-input-validator>
+                    </div>
+                </div>
+
+                <!-- CORREO FIELD -->
+                <div class="form-group row mb-3">
+                    <label for="email" class="col-sm-2 col-form-label">Correo</label>
+                    <div class="col-sm-10">
+                        <input 
+                            name="email" 
+                            type="email" 
+                            class="form-control" 
+                            id="email"
+                            formControlName="email"
+                            [ngClass]="{'is-invalid': correoControlIsInvalid}"
+                        >
+                        <app-input-validator 
+                            class="invalid-feedback"
+                            [controlForm]="email"
+                        ></app-input-validator>
+                    </div>
+                </div>
+
+                <!-- TELEFONO FIELD -->
+                <div class="form-group row mb-3">
+                    <label for="telefono" class="col-sm-2 col-form-label">Telefono</label>
+                    <div class="col-sm-10">
+                        <input 
+                            name="telefono" 
+                            type="text" 
+                            class="form-control" 
+                            id="telefono"
+                            formControlName="telefono"
+                            [ngClass]="{'is-invalid': telefonoControlIsInvalid}"
+                        >
+                        <app-input-validator 
+                            class="invalid-feedback"
+                            [controlForm]="telefono"
+                        ></app-input-validator>
+                    </div>
+                </div>
+
+                <!-- SUBMIT BUTTON -->
+                <div class="form-group row">
+                    <div class="col-sm-10">
+                        <button 
+                            [disabled]="dataForm.invalid"
+                            (click)="onSubmit()" 
+                            type="submit" 
+                            class="btn btn-primary"
+                        >GUARDAR</button>
+                    </div>
+                </div>
+            </form>
+            <!-- FORM END -->
+        </div>
+    </div>
+    <!-- CARD END -->
+</div>
+
+<app-data-usuario
+    [datos] = "enviarDatos"
+    *ngIf="enviarDatos"
+></app-data-usuario>

@@ -1,0 +1,9 @@
+<ng-container *ngIf="controlForm?.errors?.['required']">
+    Este campo es requerido
+</ng-container>
+<ng-container *ngIf="controlForm?.errors?.['pattern']">
+    Debe respetar el alfanumerico
+</ng-container>
+<ng-container *ngIf="controlForm?.errors?.['email']">
+    El correo tiene un formato invalido
+</ng-container>
