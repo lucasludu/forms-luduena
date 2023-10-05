@@ -1,15 +1,15 @@
 <div class="container mt-3">
-    <div class="card">
-        <div class="card-header d-flex justify-content-center">
+    <div class="card border-danger">
+        <div class="card-header d-flex justify-content-center bg-danger text-light fw-bold">
             Datos de Contacto
         </div>
         <div class="card-body">
-            <ul class="list-group">
+            <ol class="list-group list-group-numbered">
                 <li class="list-group-item"><b>Nombre:</b> {{ datos.nombre }}</li>
                 <li class="list-group-item"><b>Apellido:</b> {{ datos.apellido }}</li>
                 <li class="list-group-item"><b>Email:</b> {{ datos.email }}</li>
                 <li class="list-group-item"><b>Telefono:</b> {{ datos.telefono }}</li>
-            </ul>
+            </ol>
         </div>
     </div>
 </div>
